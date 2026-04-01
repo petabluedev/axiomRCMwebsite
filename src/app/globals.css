@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #ffffff;
+  --ink: #111827;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --line: #e5e7eb;
+  --card: #ffffff;
+  --sidebar: #0f172a;
+  --success: #16a34a;
+  --warning: #d97706;
+  --error: #dc2626;
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-space-grotesk);
+  --font-serif: var(--font-fraunces);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root{
+  --bg: #ffffff;
+  --panel: #f8fafc;
+  --border: #e5e7eb;
+  --text: #0b1220;
+  --muted: #64748b;
+  --navy: #0f172a;
+  --accent: #2563eb;
+  --good: #16a34a;
+  --warn: #d97706;
+  --bad: #dc2626;
+}
+html, body { background: var(--bg); color: var(--text); }
+:root{
+  --bg: #ffffff;
+  --panel: #f8fafc;
+  --panel-2: #f1f5f9;
+  --border: #e5e7eb;
+  --text: #0b1220;
+  --muted: #64748b;
+
+  /* Institutional */
+  --navy: #0f172a;
+  --navy-2:#111c33;
+
+  /* restrained accent */
+  --accent: #1d4ed8;
+
+  /* muted semantic */
+  --good-bg:#ecfdf5; --good:#047857;
+  --warn-bg:#fffbeb; --warn:#b45309;
+  --bad-bg:#fff1f2;  --bad:#be123c;
+}
+
+html, body { background: var(--bg); color: var(--text); }
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }

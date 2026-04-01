@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" role="img" aria-label="AxiomRCM">
+  <rect width="40" height="40" rx="10" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <rect x="10" y="22" width="5.5" height="8" rx="1.2" fill="#fff"/>
+  <rect x="17.25" y="15" width="5.5" height="15" rx="1.2" fill="#fff"/>
+  <rect x="24.5" y="10" width="5.5" height="20" rx="1.2" fill="#fff"/>
+</svg>
