@@ -1,37 +1,34 @@
-# AxiomRCM — marketing site (Vercel)
+# AxiomRCM — marketing site (Vercel only)
 
-Public marketing pages only (no authenticated app). Deploy this repository to **Vercel** and point your apex or `www` domain at the deployment.
+Public **marketing** pages only. **Do not** host the customer application here.
+
+- **This repo / Vercel:** `axiomrcm.ai`, `www.axiomrcm.ai` — no links, redirects, or buttons to the customer app. Access is issued out-of-band (contract, email) to URLs like `https://xyzhospital.axiomrcm.ai`.
+- **Customer app + API:** [axiomRCM](https://github.com/petabluedev/axiomRCM) — FastAPI backend (Python) on **AWS/GCP**; the signed-in UI (Next.js in `frontend/`) is **not** deployed on Vercel.
 
 ## Environment variables
 
-| Variable | Required | Purpose |
-|----------|----------|---------|
-| `NEXT_PUBLIC_APP_ORIGIN` | Recommended when the signed-in app is separate | Origin of the tenant app (e.g. `https://app.axiomrcm.ai` or `https://demo.axiomrcm.ai`). Sign-in links and `/login` redirect go to `{ORIGIN}/login`. |
-| `NEXT_PUBLIC_API_BASE` | Optional | Only if marketing pages call your API from the browser. |
+Usually **none** are required. See `.env.example` if you later add browser calls to a public API from marketing.
 
-See `.env.example`.
-
-## Create the Git repository
+## Local development
 
 ```bash
 cd axiomrcm-marketing
-git init
-git add .
-git commit -m "Initial marketing site"
-git branch -M main
+npm install && npm run dev   # http://localhost:3000
+```
+
+The customer app is developed separately (`axiomrcm/frontend`, port **3007**). This site does not reference it.
+
+## Git remote
+
+```bash
 git remote add origin https://github.com/petabluedev/axiomRCMwebsite.git
 git push -u origin main
 ```
 
 ## Vercel
 
-1. Import the GitHub repo.
-2. **Root Directory**: leave default (repo root).
-3. **Framework**: Next.js (auto).
-4. Add env vars above.
-5. Attach domains: e.g. `www.axiomrcm.ai` and `axiomrcm.ai`.
+1. Import [axiomRCMwebsite](https://github.com/petabluedev/axiomRCMwebsite).
+2. Framework: Next.js.
+3. Attach `www.axiomrcm.ai` / `axiomrcm.ai`.
 
-## Relationship to other repos
-
-- **Backend API**: separate repo (`axiomrcm-backend`) on GCP / AWS.
-- **Tenant workspace UI** (dashboard, login, uploads): deploy from `axiomrcm/frontend` in the main monorepo or a future `axiomrcm-workspace` repo; use a wildcard host like `*.axiomrcm.ai`. See `../HOSTING.md` in the parent project.
+See `../HOSTING.md` (parent project) for DNS, subdomains, and API hosting.

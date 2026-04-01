@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { SignInLink } from "@/components/marketing/SignInLink";
 
 export const metadata: Metadata = {
   title: "Product demo",
   description:
-    "See AxiomRCM live: dashboards, EDI scoring, ML prioritization, and appeal drafts. Book access or sign in to your tenant.",
+    "What AxiomRCM covers: dashboards, EDI scoring, ML prioritization, and appeal workflows. Schedule a live walkthrough with our team.",
 };
 
 const checklist = [
@@ -34,16 +33,16 @@ export default function DemoPage() {
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
-              href="/login"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-indigo-500 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-indigo-500/25 transition hover:bg-indigo-600"
             >
-              Sign in to the app
+              Schedule a live demo
             </Link>
             <Link
-              href="/contact"
+              href="/pricing"
               className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 text-sm font-semibold text-gray-800 shadow-md shadow-slate-900/5 hover:bg-slate-50"
             >
-              Talk to sales first
+              View pricing
             </Link>
           </div>
           <p className="mt-6 text-sm text-gray-500">
@@ -67,7 +66,8 @@ export default function DemoPage() {
               ))}
             </ul>
             <p className="mt-8 text-sm text-gray-500">
-              The marketing site explains the story; the authenticated app connects to your API and tenant data when configured.
+              This site is marketing only. After you contract with AxiomRCM, your team receives access to the
+              customer application separately (not linked here).
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-xl shadow-slate-900/[0.06]">
@@ -81,14 +81,18 @@ export default function DemoPage() {
           <div className="rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-white p-8 shadow-xl shadow-indigo-500/10 sm:p-12">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                Ready to run the full demo?
+                Ready for a guided walkthrough?
               </h2>
               <p className="mt-4 text-gray-600">
-                Use your credentials to open the live workspace—dashboard, upload, claims, appeals, and analytics.
+                We&apos;ll show the full workspace on a call—dashboard, upload, claims, appeals, and analytics. No
+                self-serve login from this website.
               </p>
-              <SignInLink className="mt-8 inline-flex rounded-full bg-indigo-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:bg-indigo-600">
-                Launch AxiomRCM
-              </SignInLink>
+              <Link
+                href="/contact"
+                className="mt-8 inline-flex rounded-full bg-indigo-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:bg-indigo-600"
+              >
+                Contact us
+              </Link>
             </div>
           </div>
         </div>

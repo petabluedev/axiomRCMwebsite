@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AxiomLogo } from "@/components/branding/AxiomLogo";
-import { SignInLink } from "@/components/marketing/SignInLink";
 
 const links = [
   { href: "/", label: "Home" },
@@ -50,12 +49,6 @@ export function MarketingNav() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <Link
-            href="/login"
-            className="rounded-full px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-slate-50"
-          >
-            Sign in
-          </Link>
-          <Link
             href="/contact"
             className="rounded-full bg-indigo-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-600"
           >
@@ -86,15 +79,9 @@ export function MarketingNav() {
                 {l.label}
               </Link>
             ))}
-            <SignInLink
-              className="mt-2 rounded-xl border border-slate-200 px-3 py-2.5 text-center text-sm font-medium text-gray-800"
-              onClick={() => setOpen(false)}
-            >
-              Sign in
-            </SignInLink>
             <Link
               href="/contact"
-              className="rounded-xl bg-indigo-500 px-3 py-2.5 text-center text-sm font-semibold text-white"
+              className="mt-2 rounded-xl bg-indigo-500 px-3 py-2.5 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
               Book a call

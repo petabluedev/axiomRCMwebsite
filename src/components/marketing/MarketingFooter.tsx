@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { AxiomLogo } from "@/components/branding/AxiomLogo";
-import { getLoginUrl } from "@/lib/appOrigin";
 
 const columns = [
   {
@@ -18,21 +17,16 @@ const columns = [
       { href: "mailto:hello@axiomrcm.com", label: "hello@axiomrcm.com", external: true },
     ],
   },
-];
-
-function trustColumn() {
-  return {
+  {
     title: "Trust",
     links: [
       { href: "/security", label: "Security & compliance" },
-      { href: getLoginUrl(), label: "Sign in" },
+      { href: "/contact", label: "Request access" },
     ],
-  };
-}
+  },
+];
 
 export function MarketingFooter() {
-  const allColumns = [...columns, trustColumn()];
-
   return (
     <footer className="mt-auto border-t border-slate-200/90 bg-white text-gray-600">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
@@ -43,7 +37,7 @@ export function MarketingFooter() {
               Revenue recovery intelligence for hospitals and large practices. Prioritize denials, model recoverability, and ship appeals faster.
             </p>
           </div>
-          {allColumns.map((col) => (
+          {columns.map((col) => (
             <div key={col.title}>
               <div className="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
                 {col.title}
@@ -66,8 +60,9 @@ export function MarketingFooter() {
             </div>
           ))}
         </div>
-        <div className="mt-12 border-t border-slate-200 pt-8 text-xs text-gray-500">
-          © {new Date().getFullYear()} AxiomRCM. All rights reserved.
+        <div className="mt-12 border-t border-slate-200 pt-8 text-xs text-slate-500">
+          © {new Date().getFullYear()} AxiomRCM. All rights reserved. Customer application access is provided
+          directly by AxiomRCM—not linked from this marketing site.
         </div>
       </div>
     </footer>

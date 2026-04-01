@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { SignInLink } from "@/components/marketing/SignInLink";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -75,13 +74,11 @@ export default function ContactPage() {
               </a>
             </div>
             <div className="rounded-3xl border border-slate-200/90 bg-white p-6 shadow-xl shadow-slate-900/[0.04]">
-              <h2 className="text-sm font-bold text-gray-900">Prefer the product?</h2>
+              <h2 className="text-sm font-bold text-gray-900">Already a customer?</h2>
               <p className="mt-2 text-sm text-gray-600">
-                If you already have tenant credentials, sign in and skip the line.
+                Use the application URL and credentials your organization received from AxiomRCM. This marketing
+                site does not link to the customer app.
               </p>
-              <SignInLink className="mt-4 inline-flex rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm hover:bg-slate-50">
-                Sign in
-              </SignInLink>
             </div>
             <div className="rounded-3xl border border-indigo-200 bg-indigo-50/80 p-6 shadow-lg shadow-indigo-500/10">
               <h2 className="text-sm font-bold text-gray-900">15-minute intro</h2>
