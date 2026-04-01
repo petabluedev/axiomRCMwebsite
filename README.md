@@ -19,7 +19,7 @@ git init
 git add .
 git commit -m "Initial marketing site"
 git branch -M main
-git remote add origin https://github.com/YOUR_ORG/axiomrcm-marketing.git
+git remote add origin https://github.com/petabluedev/axiomRCMwebsite.git
 git push -u origin main
 ```
 
